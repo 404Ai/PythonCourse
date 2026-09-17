@@ -1,0 +1,137 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "运行当前文件",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["${file}"],
+      "options": {
+        "cwd": "${fileDirname}",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "09 · pytest",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest"],
+      "options": {
+        "cwd": "${workspaceFolder}\\09_engineering",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "09 · pytest + 覆盖率",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest", "--cov=taskkit", "--cov-report=term-missing"],
+      "options": {
+        "cwd": "${workspaceFolder}\\09_engineering",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "09 · ruff 检查",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "ruff", "check", "."],
+      "options": {
+        "cwd": "${workspaceFolder}\\09_engineering",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "09 · ruff 格式化",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "ruff", "format", "."],
+      "options": {
+        "cwd": "${workspaceFolder}\\09_engineering",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "09 · mypy 类型检查",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "mypy", "src"],
+      "options": {
+        "cwd": "${workspaceFolder}\\09_engineering",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "10 · 表达式解释器自测",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["solution.py", "--test"],
+      "options": {
+        "cwd": "${workspaceFolder}\\10_projects\\expr_interpreter",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "10 · 日志分析自测",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["solution.py", "test"],
+      "options": {
+        "cwd": "${workspaceFolder}\\10_projects\\log_analyzer",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "10 · 并发抓取自测",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["solution.py", "test"],
+      "options": {
+        "cwd": "${workspaceFolder}\\10_projects\\async_crawler",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "10 · 算法可视化自测",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["solution.py", "test"],
+      "options": {
+        "cwd": "${workspaceFolder}\\10_projects\\algo_visualizer",
+        "env": { "PYTHONUTF8": "1" }
+      },
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "10 · 全部项目自测",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "10 · 表达式解释器自测",
+        "10 · 日志分析自测",
+        "10 · 并发抓取自测",
+        "10 · 算法可视化自测"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

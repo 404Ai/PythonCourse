@@ -1,0 +1,102 @@
+# ======================================================================
+# 这是一个真实可用的 pyproject.toml，模块 09 的讲解全部围绕它展开。
+#
+# 在 VS Code 的集成终端里 cd 到 09_engineering 目录，然后：
+#     pytest                 跑全部测试
+#     pytest -v              详细输出
+#     pytest --cov=taskkit   带覆盖率
+#     ruff check .           静态检查
+#     ruff format .          格式化
+#     mypy src               类型检查
+#
+# 嫌敲命令麻烦的话，上面这些已经全部配成了 VS Code 任务：
+#     Ctrl+Shift+P -> Run Task        挑一个跑
+#     Ctrl+Shift+B                    直接跑默认任务（pytest）
+# ======================================================================
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# ----------------------------------------------------------------------
+# [project] 是 PEP 621 规定的元数据表，取代了老的 setup.py 里的 setup(...)
+# ----------------------------------------------------------------------
+[project]
+name = "taskkit"
+version = "0.1.0"                       # 语义化版本：主.次.修订
+description = "课程演示用的小型任务管理库"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Python 系统进阶课" }]
+keywords = ["task", "cli", "teaching"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = []                        # 这个库零依赖
+
+# 可选依赖：pip install -e ".[dev]" 才会装
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "ruff>=0.8",
+    "mypy>=1.13",
+]
+
+# 命令行入口：装完之后终端里就有 taskkit 这个命令了
+[project.scripts]
+taskkit = "taskkit.cli:main"
+
+# ----------------------------------------------------------------------
+# 构建后端配置：告诉 hatchling 去哪里找包
+# ----------------------------------------------------------------------
+[tool.hatch.build.targets.wheel]
+packages = ["src/taskkit"]
+
+# ----------------------------------------------------------------------
+# pytest 配置
+# ----------------------------------------------------------------------
+[tool.pytest.ini_options]
+testpaths = ["tests"]                    # 只在这些目录里找测试
+pythonpath = ["src"]                     # 等价于把 src 加进 sys.path，省掉 pip install -e
+addopts = "-ra --strict-markers"         # -ra 显示跳过/失败的汇总
+filterwarnings = ["error"]               # 把警告当错误：警告是未来的 bug
+
+# ----------------------------------------------------------------------
+# ruff：linter + formatter 二合一
+# ----------------------------------------------------------------------
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [".venv", "build", "dist"]
+# ruff 0.14+ 也会去格式化 markdown 里的 Python 代码块。
+# 那些是**给人看的示例**，经常刻意不写成合法可执行代码（省略号、伪代码），
+# 被格式化只会搅乱排版，所以排除掉。
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle 错误
+    "F",    # pyflakes（未使用的导入、未定义的变量）
+    "I",    # isort（导入排序）
+    "UP",   # pyupgrade（用新语法替换老写法）
+    "B",    # flake8-bugbear（常见陷阱）
+    "SIM",  # flake8-simplify
+]
+ignore = ["E501"]                        # 行长由 formatter 管，lint 不管
+
+# ----------------------------------------------------------------------
+# mypy：静态类型检查
+# ----------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+disallow_untyped_defs = true             # 所有函数都必须有类型注解
+warn_return_any = true
+no_implicit_optional = true
+
+# 说明：这里没有为 tests/ 写 overrides 放宽检查，因为 mypy 在本项目的
+# 调用方式是 `mypy src` —— 只看产品代码。要连测试一起查就跑 `mypy src tests`，
+# 那时再按需要加 overrides 也不迟。

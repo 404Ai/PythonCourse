@@ -1,0 +1,50 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- 虚拟环境 ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- 测试与类型检查缓存 ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- PyCharm（历史遗留，用 PyCharm 打开过就会生成）---
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# --- VS Code ---
+# 注意：.vscode/settings.json、launch.json、tasks.json 是**课程材料的一部分**，
+# 要跟着仓库走（它们锁定了 .venv 解释器、F5 调试配置、pytest/ruff/mypy 任务）。
+# 所以这里只忽略本地产物，不要整目录忽略 .vscode/。
+.vscode/*.log
+.vscode/settings.local.json
+
+# --- Claude Code ---
+# settings.local.json 是本机的权限白名单/个人配置，换台机器就没意义，不提交。
+# 注意：.claude/settings.json 按设计是**团队共享**的（hooks、自定义命令、权限规则），
+# 所以不要整目录忽略 .claude/，只挡 local 那一份。
+.claude/settings.local.json
+
+# --- 个人学习进度（不对外同步）---
+# 每个模块的完成勾选是你自己的记录，不进仓库。
+学习进度.md
+
+# --- 本课程的练习产物（你自己生成的文件不提交）---
+**/output/
+**/*.log

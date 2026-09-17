@@ -1,0 +1,19 @@
+# Python 系统进阶课 —— 第三方依赖
+#
+# 安装：  pip install -r requirements.txt
+#
+# 模块 01~06 只依赖标准库，可以完全不装。
+# 从模块 07 开始才需要下面的库。
+
+# --- 模块 09：测试与代码质量 ---
+pytest>=8.3          # 单元测试框架，模块 09 的主角
+pytest-cov>=6.0      # 测试覆盖率报告
+ruff>=0.8            # 极快的 linter + formatter（替代 flake8/isort/black）
+mypy>=1.13           # 静态类型检查器
+
+# --- 模块 10：综合项目 ---
+requests>=2.32       # HTTP 客户端（并发爬虫项目）
+rich>=13.9           # 终端富文本，做 CLI 界面很好看
+
+# --- 选装：想让 asyncio 示例更真实可以装 ---
+# aiohttp>=3.11

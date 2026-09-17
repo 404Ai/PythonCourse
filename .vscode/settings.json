@@ -1,0 +1,28 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.analysis.typeCheckingMode": "basic",
+
+  "python.terminal.executeInFileDir": true,
+
+  "files.encoding": "utf8",
+  "files.trimTrailingWhitespace": false,
+
+  "terminal.integrated.env.windows": {
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+
+  "editor.rulers": [100],
+  "editor.formatOnSave": false,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./01_language_core",
+    "-p",
+    "*test.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true
+}
