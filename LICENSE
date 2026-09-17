@@ -1,52 +1,14 @@
 Python 系统进阶课（PythonCourse）
 Copyright (C) 2026 404Ai
 
-本作品采用「知识共享 署名-非商业性使用-相同方式共享 4.0 国际」
-（Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International，
-简称 CC BY-NC-SA 4.0）许可协议授权。
+This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License.
 
-  协议摘要（人话版）：https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
-  协议全文（中文）：  https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.zh-hans
-  协议全文（英文）：  https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+To view a copy of this license, visit
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
---------------------------------------------------------------------
-你可以自由地：
---------------------------------------------------------------------
-
-  共享 — 以任何媒介或格式复制、发行本作品
-  演绎 — 修改、转换或以本作品为基础进行创作
-
-许可人不能撤销这些自由，只要您遵守本许可协议的条款。
-
---------------------------------------------------------------------
-但必须遵守以下条件：
---------------------------------------------------------------------
-
-  署名（BY）
-      您必须给出适当的署名，提供指向本许可协议的链接，并标明
-      是否作出了修改。您可以以任何合理方式署名，但不得以任何
-      方式暗示许可人为您或您的使用背书。
-
-  非商业性使用（NC）
-      您不得将本作品用于商业目的。
-
-  相同方式共享（SA）
-      若您修改、转换或以本作品为基础进行创作，您必须采用与本
-      作品相同的许可协议分发您的作品。
-
-  不得增加额外限制
-      您不得适用法律术语或技术措施，从而在法律上限制他人做本
-      许可协议允许的事情。
-
---------------------------------------------------------------------
-
-简而言之：欢迎同学自由学习、运行代码、做练习、修改改造、分享
-给他人，只需注明原作者、不得用于商业目的、且衍生作品沿用同样的
-非商业协议。
-
-本作品的完整法律条款为下方英文原文，与上述摘要如有冲突，以
-英文原文为准。
-====================================================================
+中文术语摘要见 README.md「九、授权协议」。以下为协议原文。
 
 Attribution-NonCommercial-ShareAlike 4.0 International
 
