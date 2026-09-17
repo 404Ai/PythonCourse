@@ -304,3 +304,21 @@ cd 10_projects\algo_visualizer   && python solution.py test
 > 满屏的 `for i in range(len(arr))`、手写 getter/setter、到处 `try/except: pass`。
 >
 > 这套课的真正目标，是让你写出**像 Python 的 Python**。
+
+---
+
+## 九、授权协议
+
+本项目采用 **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)**
+（署名 — 非商业性使用 — 相同方式共享）许可协议。
+
+| | |
+|---|---|
+| **可以** | 自由学习、运行代码、做练习、修改改造、分享给同学 |
+| **必须** | 注明原作者，并标明是否作出修改 |
+| **不可以** | 用于商业目的（卖钱、放进付费课程、商业产品） |
+| **衍生作品** | 必须沿用同样的非商业协议分发 |
+
+一句话：**拿来学、随便改、可以传，但别拿去卖，也别改头换面说成自己的。**
+
+完整法律条款见 [LICENSE](LICENSE)。
