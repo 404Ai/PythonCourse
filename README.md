@@ -1,5 +1,7 @@
 # Python 系统进阶课
 
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 > 一套面向**已有编程与算法基础**的计算机系学生的 Python 课程。
 > 不讲「什么是变量」，讲的是「Python 的变量为什么和 C 的变量不是一回事」。
 
